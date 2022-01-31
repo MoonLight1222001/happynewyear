@@ -1,0 +1,805 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.homePage {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: none;
+}
+
+.backgroundCity {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+}
+.backgroundCity img {
+    width: 100%;
+}
+.moon {
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    z-index: 100;
+    box-shadow: 5px 5px 5px #fff outset;
+}
+.moon img {
+    width: 100%;
+    height: 100%;
+}
+#animationTest {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 100;
+    width: 100;
+    height: 100;
+}
+canvas {
+    background-color:rgba(0,5,24,1);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*  */
+
+.background {
+    background: url('./imgs/background.jpg');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.inner {
+    position: absolute;
+    width: 600px;
+    /* height: 250px; */
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.inner svg {
+    position: absolute;
+    z-index: 1;
+}
+.inner .greeting {
+    /* width: 600px; */
+    margin: auto;
+    height: 140px;
+    margin-bottom: 90px;
+}
+.inner .greeting svg.newyear1 {
+    width: 100%;
+    height: 140px;
+    /* top: 65px; */
+}
+.inner .greeting svg.newyear1 .anim1 {
+    fill: none;
+    stroke: #c5ba9a;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 10px;
+    stroke-dasharray: 2824.1877441406;
+    stroke-dashoffset: 2824.1877441406;
+    animation: draw 2.7s linear 0.5s forwards;
+}
+.inner .greeting svg.newyear2 {
+    width: 50%;
+    margin: auto;
+    height: 90px;
+    top: 39%;
+    left: 0;
+    right: 0;
+}
+@media only screen and (min-width: 680px) {
+    .inner .greeting svg.newyear2 {
+        width: 100%;
+        height: 158px;
+        top: 225px;
+   }
+}
+.inner .greeting svg.newyear2 .anim2 {
+    fill: none;
+    stroke: #c5ba9a;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 10px;
+    stroke-dasharray: 726.2219848633;
+    stroke-dashoffset: 726.2219848633;
+    animation: draw 1.2s linear 3.2s forwards;
+}
+.inner .greeting svg.underline {
+    width: 88%;
+    top: 170px;
+    right: 0;
+    width: 86%;
+}
+@media only screen and (min-width: 680px) {
+    .inner .greeting svg.underline {
+        top: 200px;
+   }
+}
+.inner .greeting svg.underline .underlineAnim {
+    fill: none;
+    stroke: #c5ba9a;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 10px;
+    stroke-dasharray: 1452.0181884766;
+    stroke-dashoffset: 1452.0181884766;
+    animation: draw 0.4s linear 5.3s forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+   }
+}
+
+
+/*  */
+
+.input {
+    /* height: 40px; */
+    /* position: absolute;
+    width: 400px;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%); */
+    text-align: center;
+}
+
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.6rem;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+.input__error {
+    display: none;
+    color: #C5BA9A;
+    font-size: 24px;
+    text-align: center;
+    margin: 25px 0;
+    height: 40px;
+}
+
+.year {
+    /* position: absolute;
+    width: 400px;
+    height: 60px;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%); */
+    text-align: center;
+    color: #fff;
+    font-size: 48px;
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        -225deg,
+        #fff 0%,
+        #1f947b 29%,
+        #ff1361 67%,
+        #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    /* display: inline-block; */
+    margin-top: 64px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.log-btn {
+    position: relative;
+    height: 40px;
+    width: 42px;
+    border-radius: 50%;
+    background-color: rgb(78, 18, 18);
+    margin: 25px auto;
+}
+
+#log-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+
+.log-btn:hover {
+    background-color: rgb(143, 23, 23);
+    cursor: pointer;
+}
+/*  */
+
+.main-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 380px;
+    border-radius: 8px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(214,116,30,0.9587185215883228) 50%, rgba(252,176,69,1) 100%);
+}
+
+.main-content {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+#main__header {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-family: 'The Nautigal', cursive;
+    font-weight: 700;
+    margin-left: 12px;
+    color: red;
+}
+
+#main__user {
+    font-size: 48px;
+
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h3 {
+    color: #000;
+    /* font-family: monospace; */
+    font-family: 'Dancing Script', cursive;
+    overflow: hidden;
+    margin: 0 auto; 
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0; height: 30px;}
+    to { width: 100% ;  height: 30px}
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+
+
+.lucky_money{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 82%;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 20px;
+    color: #3aa525;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 2px;
+    overflow: hidden;
+    text-align: center;
+}
+.lucky_money:hover{
+    background: #3aa525;
+    color: #fff;
+}
+.lucky_money{
+    filter: hue-rotate(270deg);
+}
+
+.lucky_money span{
+    position: absolute;
+    display: block;
+}
+
+.lucky_money span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#3aa525);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+
+.lucky_money span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#3aa525);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+.lucky_money span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#3aa525);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+.lucky_money span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#3aa525);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+.modal {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 101;
+    display: none;
+}
+
+.notice {
+    position: absolute;
+    height: 72%;
+    width: 30%;
+    top: 55%;
+    left: 50%;
+    padding: 18px 0;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    border-radius: 12px;
+    display: none;
+    border: 2px solid rgb(221, 49, 49);
+    font-family: 'Dancing Script';
+    z-index: 1000111;
+}
+
+.notice__content-video {
+    /* position: absolute;
+    inset: 0; */
+    width: 100%;
+    height: 100%;
+}
+
+.notice__content-video video {
+    width: 100%;
+    height: 100%;
+}
+
+.notice__title {
+    text-align: center;
+    font-size: 38px;
+    height: 60px;
+    color: red;
+    font-weight: 600;
+}
+
+.notice__content {
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    text-align: center;
+}
+
+.notice__btn {
+    text-align: center;
+    margin: 8px 0;
+}
+
+.notice__btn button {
+    padding: 12px 18px;
+    outline: 0;
+    border: 0;
+    background-color: rgb(238, 71, 71);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.notice__btn button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+/*  */
+
+/* Ipad */
+
+
+@media screen and (max-width : 740px) {
+    .background {
+        background: url('./imgs/bg-responsive.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .inner {
+        width: 310px;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .inner .greeting {
+        margin-bottom: 20px;
+    }
+
+    .inner .greeting svg.newyear1 {
+        top: 56px;
+    }
+
+    .input {
+        width: 310px;
+        top: 52%;
+    }
+
+    .log-btn {
+        margin: 48px auto;
+    }
+
+    .year {
+        width: 310px;
+    }
+
+    .main-inner {
+        width: 330px;
+        height: 350px;
+    }
+
+    #main__header {
+        margin-bottom: 0;
+    }
+
+    .typewriter h3 {
+        font-size: 22px;
+        letter-spacing: .12rem;
+    }
+
+    .lucky_money {
+        font-size: 14px;
+    }
+
+    .notice {
+        width: 90%;
+        top: 50%;
+    }
+
+
+
+    .moon {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+    }
+    
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .background {
+        background: url('./imgs/bg-responsive.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .main-content {
+        padding: 12px 36px;
+    }
+
+    .main-inner {
+        width: 740px;
+        height: 740px;
+    }
+
+    .main__header {
+        font-size: 60px;
+    }
+
+    .typewriter h3 {
+        font-size: 46px;
+        line-height: 56px;
+        color: #000;
+        font-family: 'Dancing Script', cursive;
+        overflow: hidden;
+        margin: 0 auto; 
+        /* font-size: 28px; */
+        font-weight: 700;
+        letter-spacing: .15em; 
+        animation: 
+          typing 3.5s steps(64, end),
+          blink-caret .5s step-end infinite;
+    }
+    
+    .inner .greeting {
+        margin-top: 74px;
+    }
+
+
+    .moon {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+    }
+
+    .log-btn {
+        position: relative;
+        height: 52px;
+        width: 54px;
+        border-radius: 50%;
+        background-color: rgb(78, 18, 18);
+        margin: 62px auto;
+        font-size: 26px;
+    }
+
+    .year {
+        height: 100px;
+        font-size: 64px;
+    }
+
+    .notice {
+        width: 79%;
+        top: 50%;
+    }
+
+    .notice__title {
+        font-size: 52px;
+    }
+
+    .notice__content {
+        height: calc(100% - 180px);
+        margin-top: 12px;
+    }
+
+    .notice__btn {
+        margin: 21px 0;
+    }
+
+    .notice__btn button {
+        font-size: 36px;
+        padding: 22px 32px;
+    }
+
+    #main__header {
+        font-size: 72px;
+    }
+
+    .lucky_money {
+        font-size: 1.8rem;
+        padding: 36px 32px;
+    }
+
+    @keyframes typing {
+        from { width: 0; height: 60px;}
+        to { width: 100% ;  height: 60px}
+      }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .moon {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        top: 20px;
+        right: 40px;
+        z-index: 100;
+    }
+
+    .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .inner .greeting  {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .background {
+        background: url('./imgs/bg-responsive.jpg');
+        background-repeat: no-repeat;
+        background-size: 130% 100%;
+    }
+
+    .input {
+        width: 310px;
+    }
+
+    .main__header {
+        font-size: 60px;
+    }
+
+    .year {
+        font-size: 40px;
+        margin-top: 16px;
+    }
+
+    .notice {
+        top: 50%;
+    }
+    
+    
+}
+
